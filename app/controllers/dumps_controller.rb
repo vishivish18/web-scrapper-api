@@ -47,7 +47,6 @@ class DumpsController < ApplicationController
 
   # GET /dumps/:id
   def show
-  	puts "I AM HERE"
   	url = params[:url]
   	puts url
   	@dump = Dump.find(url: url)
