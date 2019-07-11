@@ -5,11 +5,15 @@ require 'open-uri'
 class DumpsController < ApplicationController
 
   # GET /dumps
-  def index
-  	@dumps = Dump.all  	
-  	# @dumps.each do |data|
-  	# 	data.destroy
-  	# end
+  def index  	
+  	if params[:url].present?
+  		url = params[:url]
+  		puts url  		
+  		@dumps = Dump.where(url: url)  	
+  	else
+  		@dumps = Dump.all  	 
+
+  	end
     json_response(@dumps)
   end
 
@@ -47,6 +51,7 @@ class DumpsController < ApplicationController
 
   # GET /dumps/:id
   def show
+  	puts "I am in the show function"
   	url = params[:url]
   	puts url
   	@dump = Dump.find(url: url)
@@ -61,10 +66,10 @@ class DumpsController < ApplicationController
 
   # DELETE /dumps/:id
   def destroy
-    @dumps = Dump.all  	
-  	@dumps.each do |data|
-  		data.destroy
-  	end
+    #@dumps = Dump.all  	
+  	# @dumps.each do |data|
+  	# 	data.destroy
+  	# end
   end
 
   private
