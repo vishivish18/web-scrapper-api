@@ -1,4 +1,4 @@
-## Web Scrapper API | Ruby On Rails
+## Web Scrapper API | Ruby On Rails ![ROR](https://rubyonrails.org/images/rails-logo.svg)
 
 This is a small application for experimentation with Ruby on Rails with sqllite DB. This application is able to scrap HTML tags from a web url and save it the database.
 
@@ -8,7 +8,7 @@ This is a small application for experimentation with Ruby on Rails with sqllite 
 
 2. `GET /dumps` - To view list of all the data that the scapper has scapper till now, send a GET request to this API
 
-3. `GET/dumps?url=http/www.example.com` - To view all the data scrapped for a particular website send a GET request to this API with url of the website in query params
+3. `GET /dumps?url=http://www.example.com` - To view all the data scrapped for a particular website send a GET request to this API with url of the website in query params
 
 
 ## [Live demo here](http://web-scrapper.vishalranjan.in/)
@@ -23,8 +23,8 @@ This is a small application for experimentation with Ruby on Rails with sqllite 
 ### Dependencies
 
 * `ruby 2.6.3` 
-* 'rails 5.2.3'
-* 'nokogiri 1..6.8'
+* `rails 5.2.3`
+* `nokogiri 1..6.8`
 
 
 ### Contribution
