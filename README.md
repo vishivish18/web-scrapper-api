@@ -2,6 +2,32 @@
 
 This is a small application for experimentation with Ruby on Rails with sqllite DB. This application is able to scrap HTML tags from a web url and save it the database.
 
+### To scrap content from a webpage
+Send a `POST` request to `http://web-scrapper.vishalranjan.in/dumps?url=http://wwww.somewebsite.com`
+
+#### To view all the content scrapped from all the webpages 
+Send a `GET` request to `http://web-scrapper.vishalranjan.in/dumps`
+
+#### To view all the content scrapped from a specific webpage
+Send a `GET` request to `http://web-scrapper.vishalranjan.in/dumps?url=http://www.somespecificwebsite.com`
+
+
+Here is how the data is being stored in the database.
+
+| id  | url | tagtype | content
+| ------------- | ------------- | ------------- | ------------- |
+| 1  | `https://vishalranjan.in`  | h1 | Hi, I am Vishal |
+| 2  | `https://vishalranjan.in`  | link | Vishal Ranjan |
+| 3  | `https://vishalranjan.in`  | link | Projects |
+| 4  | `https://vishalranjan.in` | link | Writings |
+| 5  | `https://vishalranjan.in`  | link | About |
+| 6  | `https://music.youtube.com/watch?v=bx1Bh8ZvH84`  | link | Privacy |
+| 7  | `https://example.com`  | h2 | Example h2 |
+| 8  | `https://example.com`  | h3 | Example h3 |
+
+
+
+
 ## API Description
 1. `POST /dumps` - To scrap data from a website, just send a POST request to this API with address of url in the key of name url
 `data  = {url=http://www.example.com}`
@@ -16,7 +42,7 @@ This is a small application for experimentation with Ruby on Rails with sqllite 
 
 
 ### Setup
-* git clone `https://github.com/vishivish18/web-scrapper-api.git`
+* `git clone https://github.com/vishivish18/web-scrapper-api.git`
 * Run `bundle install` from project directory
 * Run `rails s` to start project and the magic begins on `localhost:3000`
 
